@@ -4,16 +4,22 @@
   "description": "byenior59",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kingkong64/byenior59.git"
+    "url": "https://github.com/kingkong64/byenior59.git"
   },
   "author": "Ton Piromplad",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kingkong64/byenior59/issues"
   },
-  "homepage": "https://github.com/kingkong64/byenior59#readme"
+  "homepage": "https://github.com/kingkong64/byenior59#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.12"
+  }
 }
