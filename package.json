@@ -1,0 +1,19 @@
+{
+  "name": "byenior59",
+  "version": "1.0.0",
+  "description": "byenior59",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kingkong64/byenior59.git"
+  },
+  "author": "Ton Piromplad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kingkong64/byenior59/issues"
+  },
+  "homepage": "https://github.com/kingkong64/byenior59#readme"
+}
