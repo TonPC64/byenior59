@@ -41,6 +41,13 @@ app.post('/insert', jsonParser, function (req, res) {
   res.send(insert)
 })
 
+// var fs = require('fs');
+// var obj = JSON.parse(fs.readFileSync('public/resource/data.json', 'utf8'))
+// obj.data.forEach( (item) => {
+//   var insert = new users(item)
+//   insert.save()
+// })
+
 app.listen(app.get('port'), function () {
   console.log('Server Start at port ', app.get('port'))
 })

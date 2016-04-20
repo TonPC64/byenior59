@@ -8,11 +8,12 @@
         <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
         <script type="text/javascript" src="js/angular-1.0.1.js" charset="utf-8"></script>
         <script type="text/javascript" src="js/slot.js" charset="utf-8"></script>
-
     </head>
     <body ng-app="myApp">
         <div ng-controller="MyCtrl">
-            <slot trigger="myTrigger"></slot>
+            <slot id="name" trigger="myTrigger" dataslot="dataname"></slot>
+            <slot id="pre" trigger="myTrigger" dataslot="datapre"></slot>
+            <slot id="sid" trigger="myTrigger" dataslot="datasid"></slot>
             <br/>
             <button ng-click="btnClick()">Click Me</button>
         </div>

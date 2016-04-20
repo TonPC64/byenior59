@@ -5,7 +5,7 @@ angular.module('slots', []).directive('slot', function () {
     restrict: 'E',
     template: '<div class="slots" id="slots"><div class="wrapper"></div></div>',
     fn: {
-      opts: ['Abraham', 'Bob', 'Carter', 'Doug', 'Fred'],
+      opts: [],
       go: function (elem) {
         der.fn.addSlots(elem)
         der.fn.moveSlots(elem)
@@ -34,21 +34,31 @@ angular.module('slots', []).directive('slot', function () {
         if (scope[attrs.trigger] !== undefined) {
           scope.$watch(attrs.trigger, function (newValue, oldValue) {
             if (newValue) {
-              der.fn.go($('#slots .wrapper'))
+              der.fn.opts = scope[attrs.dataslot]
+              der.fn.go($('#' + attrs.id + ' #slots .wrapper'))
             }
           })
         }
       }
+      console.log(scope[attrs.dataslot])
     }
   }
   return der
 })
 
 var myApp = angular.module('myApp', ['slots'])
-myApp.controller('MyCtrl', function ($scope) {
+myApp.controller('MyCtrl', function ($scope, $http) {
+  $http.get('/register').success(function (req, res) {
+    $scope.dataname = req.map((item) => item.name)
+    $scope.datasid = req.map((item) => item.sid.substr(0, 2))
+    $scope.datapre = req.map((item) => item.pre)
+  })
   $scope.myTrigger = false
+  $scope.myTrigger1 = false
+  $scope.myTrigger2 = false
   $scope.btnClick = function () {
     $scope.myTrigger = !$scope.myTrigger
+    $scope.myTrigger1 = !$scope.myTrigger
+    $scope.myTrigger2 = !$scope.myTrigger
   }
-  console.log('inscope')
 })
