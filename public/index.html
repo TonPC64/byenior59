@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Byenior</title>
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta charset="utf-8">
-        <title>Byenior</title>
 
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
         <script src="js/angular.min.js"></script>
         <script src="js/app.js"></script>
+        <link type="text/css" rel="stylesheet" href="css/register.css"/>
     </head>
-    <body ng-app="byeniorApp" ng-controller="byeniorCtrl" align="center">
+    <body ng-app="byeniorApp" ng-controller="byeniorCtrl">
         {{openAuto(false)}}
-        {{data.name}}<br>
-        {{have}}<br>
-        <button type="button" name="button" ng-click="insert()" ng-show="checkShow&&found">ลงทะเบียน</button><br>
-        <input type="text" ng-model="sid" ng-change="checkValue(sid)" autofocus="true" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+        <marquee style="font-size:3rem;background-color:#fff3e0;">ขอเชิญชวนถ่ายภาพลง instagram ติดแฮชแท็ก <b style="background-color:#fff;">&nbsp; #BYEIT14 </b> &nbsp;เพื่อถ่ายถอดความรู้สึกในงานบายเนียร์ IT14</marquee>
+        <div align="center" class="cont">
+            <div class="container cont" >
+                <br><br><br>
+                <div id="name">
+                  {{data.name}}  &nbsp;
+                </div>
+                <div id="have">
+                  {{have}}  &nbsp;
+                </div>
+                <button class="btn btn-large" style="height:70px;" type="button" name="button" ng-click="insert()" ng-show="checkShow&&found">ลงทะเบียน</button><br>
+                <input class="white" style="font-size: 3rem;width:380px" type="text" ng-model="sid" ng-change="checkValue(sid)" autofocus="true" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                <br>ผู้ร่วมงานทั้งหมด {{count}} คน
+            </div>
 
+        </div>
     </body>
 </html>

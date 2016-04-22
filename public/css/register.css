@@ -1,0 +1,35 @@
+body {
+    background-image: url("../image/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.cont{
+    height: 100vh;
+    font-size: 3rem;
+}
+
+.bg {
+  height: 60vh;
+  font-size: 3rem;
+}
+
+.colorred {
+  color: red;
+}
+
+.colorgreen {
+  color : green;
+}

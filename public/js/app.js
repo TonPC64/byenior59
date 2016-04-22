@@ -1,15 +1,23 @@
-/* global angular */
+/* global angular, $ */
 angular.module('byeniorApp', [])
   .controller('byeniorCtrl', function ($scope, $http) {
+    $http.get('/allregister').success(function (req, res) {
+      $scope.count = req.length
+    })
     $scope.post = function (sid) {
+      $http.get('/allregister').success(function (req, res) {
+        $scope.count = req.length
+      })
       $http.post('/register', {data: sid}).success(function (req, res) {
         var data = req[0]
         if (data != null) {
+          $('#name').removeClass('colorred')
           $scope.data = {sid: data.sid, pre: data.pre, name: data.name, permission: true}
           $scope.checkShow = true
           checkRegister(sid)
         } else {
           $scope.data = {name: '404 Not Found'}
+          $('#name').addClass('colorred')
           if ($scope.auto) {
             $scope.sid = ''
           }
@@ -34,6 +42,8 @@ angular.module('byeniorApp', [])
       $http.post('/checkRegis', {data: sid}).success(function (req, res) {
         var data = req[0]
         if (data != null) {
+          $('#have').removeClass('colorgreen')
+          $('#have').addClass('colorred')
           $scope.have = 'ลงทะเบียนแล้ว'
           $scope.found = false
           $scope.sid = ''
@@ -53,6 +63,8 @@ angular.module('byeniorApp', [])
         $scope.have = ''
         $scope.found = false
         $scope.have = 'ลงทะเบียนเสร็จสิ้น'
+        $('#have').removeClass('colorred')
+        $('#have').addClass('colorgreen')
       })
     }
 

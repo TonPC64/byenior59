@@ -17,3 +17,11 @@
 .box {
 	margin-top: 20px
 }
+
+body {
+		background-image: url("../image/bg.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+}

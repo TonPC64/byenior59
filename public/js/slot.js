@@ -5,7 +5,7 @@ angular.module('slots', []).directive('slot', function () {
     time: '',
     result: '',
     restrict: 'E',
-    template: '<div class="slots" id="slots"><div class="wrapper"></div></div>',
+    template: '<div class="slots lime lighten-4" id="slots"><div class="wrapper"></div></div>',
     fn: {
       opts: [],
       go: function (elem) {
@@ -57,7 +57,7 @@ var myApp = angular.module('myApp', ['slots'])
 myApp.controller('MyCtrl', function ($scope, $http, $timeout) {
   var reciveData = function () {
     $http.get('/register').success(function (req, res) {
-      $scope.rand = Math.round(Math.random() * (req.map((item) => item.name).length) * 3)
+      $scope.rand = Math.round(Math.random() * (req.map((item) => item.name).length) * 2)
       $scope.dataname = setData(req.map((item) => item.name), 30)
       $scope.datasid = setData(req.map((item) => 'ปี ' + item.sid.substr(0, 2)), 10)
       $scope.datapre = setData(req.map((item) => item.pre), 15)
@@ -79,9 +79,6 @@ myApp.controller('MyCtrl', function ($scope, $http, $timeout) {
 
   var setData = function (arr, len) {
     var data = arr
-    data.forEach((item) => {
-      arr.push(item)
-    })
     data.forEach((item) => {
       arr.push(item)
     })

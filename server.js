@@ -12,8 +12,8 @@ var Registers = mongoose.model('registers', thingSchema)
 app.set('port', (process.env.PORT || 80))
 app.use(express.static('public'))
 
-app.get('/users', function (req, res) {
-  Users.find(function (err, data) {
+app.get('/allregister', function (req, res) {
+  Registers.find(function (err, data) {
     if (err === null) res.send(data)
     else res.sendStatus(400)
   })

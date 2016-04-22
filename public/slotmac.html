@@ -14,6 +14,7 @@
         <script type="text/javascript" src="js/slot.js" charset="utf-8"></script>
     </head>
     <body ng-app="myApp">
+      <br style="font-size:7rem;">
         <div ng-controller="MyCtrl">
             <div class="container">
                 <div class="row" align="center">
@@ -28,7 +29,7 @@
                         <slot id="name" trigger="myTrigger" dataslot="dataname" time="30" func="updateData"></slot>
                     </div>
                     <div class="box col s12 l12 center" ng-hide="myTrigger">
-                        <button class="btn btn-large " ng-click="btnClick()">Click Me</button>
+                        <button style="font-size:2.5rem;height:70px;" class="btn btn-large  orange darken-3" ng-click="btnClick()">Let's Go</button>
                     </div>
 
                 </div>
